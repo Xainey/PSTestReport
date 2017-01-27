@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Generated PowerShell Test Report">
+  <meta name="author" content="">
+
+  <title>PowerShell Test Report</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" media="all" rel="stylesheet">
+
+  <link href="./lib/TestReport.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#navbar-example" id="overview">
+
+    <!-- Define SVG -->
+    <svg style="display:none;">
+        <symbol id="PowerShell">
+            <g stroke="null" id="svg_1">
+            <path stroke="null" d="m47.118193,0.030044c8.863502,-0.003081 17.727389,-0.030044 26.590891,0.007319c5.269337,0.02157 6.754997,1.782253 5.619085,6.986108c-3.326461,15.240247 -6.727649,30.465086 -10.174673,45.678755c-1.090075,4.808655 -3.59455,6.778493 -8.653191,6.793515c-17.727389,0.05277 -35.454778,0.058548 -53.181782,-0.002311c-5.794344,-0.020415 -7.318523,-1.982935 -6.070137,-7.474138c3.387321,-14.913224 6.792745,-29.821827 10.225518,-44.724651c1.307705,-5.679174 3.272921,-7.238405 9.052628,-7.254968c8.863887,-0.025037 17.727774,-0.006548 26.591662,-0.00963z" fill="#E0EAF5" clip-rule="evenodd" fill-rule="evenodd" id="svg_3"/>
+            <path stroke="null" d="m33.72337,57.723504c-8.864658,-0.003081 -17.7297,0.037748 -26.593973,-0.020415c-4.495114,-0.029274 -5.312477,-1.090075 -4.300595,-5.486581c3.430461,-14.910528 6.971471,-29.796019 10.325666,-44.723495c0.899408,-4.003617 2.839587,-5.773159 7.129012,-5.733485c17.727774,0.164474 35.45863,0.05277 53.18756,0.070874c4.446195,0.004237 5.192685,0.95526 4.194669,5.464626c-3.240565,14.639743 -6.501545,29.275248 -9.819917,43.897658c-1.241838,5.472329 -2.672417,6.516567 -8.429783,6.529278c-8.564213,0.018104 -17.128811,0.004622 -25.692639,0.001541z" fill="#2671BE" clip-rule="evenodd" fill-rule="evenodd" id="svg_4"/>
+            <path stroke="null" d="m41.266456,28.502566c-0.594341,-0.697186 -1.246845,-1.499912 -1.937868,-2.267201c-3.918491,-4.352595 -7.802316,-8.737546 -11.790526,-13.025045c-1.825009,-1.962135 -2.406639,-3.867647 -0.214933,-5.804359c2.165898,-1.914372 4.294047,-1.74489 6.280834,0.4576c5.533189,6.131767 11.059829,12.270467 16.684692,18.317878c2.100031,2.258727 1.610845,3.794462 -0.702193,5.468092c-8.878139,6.426049 -17.706204,12.921816 -26.524639,19.429909c-1.982164,1.463319 -3.871884,1.829631 -5.4731,-0.331645c-1.76646,-2.383913 -0.132119,-3.802165 1.700208,-5.136448c6.55316,-4.773218 13.093608,-9.564154 19.605939,-14.392839c0.907112,-0.672534 2.209424,-1.064653 2.371587,-2.715942z" fill="#FDFDFE" clip-rule="evenodd" fill-rule="evenodd" id="svg_5"/>
+            <path stroke="null" d="m44.073302,51.562848c-2.386609,0 -4.776685,0.082044 -7.157901,-0.026193c-1.899735,-0.085896 -3.042965,-1.147467 -3.019083,-3.148506c0.023111,-1.892031 0.97683,-3.314521 2.874639,-3.36575c5.216181,-0.139822 10.440066,-0.109778 15.658173,-0.007704c1.658223,0.032356 2.882343,1.112801 2.872328,2.840743c-0.011941,1.982164 -1.055023,3.517899 -3.17778,3.64578c-2.674728,0.161778 -5.366018,0.040059 -8.04999,0.040059c-0.000385,0.006548 -0.000385,0.014252 -0.000385,0.02157z" fill="#FCFDFD" clip-rule="evenodd" fill-rule="evenodd" id="svg_6"/>
+            </g>
+        </symbol>
+    </svg>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+          aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <a class="navbar-brand" href="#">PowerShell Test Report</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Help</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-1 sidebar" id="navbar-example">
+        <ul class="nav nav-sidebar">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#tests">Tests</a></li>
+          <li><a href="#analysis">Script Analysis</a></li>
+          <li><a href="#coverage">Coverage</a></li>
+          <li class="nav-divider"></li>
+          <li><a href="{REPO_URL}">Git Repository</a></li>
+          <li><a href="{CI_BUILD_URL}">CI Build</a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-9 col-sm-offset-3 col-md-11 col-md-offset-1 main">
+        <h1 class="page-header">
+          <!--<img src=".\lib\PowerShell.svg" width="80" /> -->
+
+          <!-- Try to inline svg to keep from needing extra output files -->
+          <svg style="width: 80px; height: 60px;" >
+              <use xlink:href="#PowerShell"  />
+          </svg>          
+          Overview <small>{REPO}</small></h1>
+
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-search" aria-hidden="true"></i> Build #</h3>
+              </div>
+              <div class="panel-body">
+                <h3>{BUILD_NUMBER}</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-clock-o" aria-hidden="true"></i> Date</h3>
+              </div>
+              <div class="panel-body">
+                <h3>{BUILD_DATE}</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-link" aria-hidden="true"></i> Commit</h3>
+              </div>
+              <div class="panel-body">
+                <h3>{COMMIT_HASH}</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="panel {BUILD_RESULT_COLOR}">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa {BUILD_RESULT_ICON}" aria-hidden="true"></i> Build Result</h3>
+              </div>
+              <div class="panel-body">
+                <h3>{BUILD_RESULT}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-xs-6 col-sm-3">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-info-circle" aria-hidden="true"></i> Stats</h3>
+              </div>
+
+              <table class="table table-condensed">
+
+                <tr>
+                  <td>Total Count</td>
+                  <td>{TOTAL_COUNT}</td>
+                </tr>
+                <tr>
+                  <td>Passed Count</td>
+                  <td>{PASSED_COUNT}</td>
+                </tr>
+                <tr>
+                  <td>Failed Count</td>
+                  <td>{FAILED_COUNT}</td>
+                </tr>
+                <tr>
+                  <td>Skipped Count</td>
+                  <td>{SKIPPED_COUNT}</td>
+                </tr>
+                <tr>
+                  <td>Pending Count</td>
+                  <td>{PENDING_COUNT}</td>
+                </tr>
+                <tr>
+                  <td>Number Of Commands Analyzed</td>
+                  <td>{NUMBER_OF_COMMANDS_ANALYZED}</td>
+                </tr>
+                <tr>
+                  <td>Number Of Files Analyzed</td>
+                  <td>{NUMBER_OF_FILES_ANALYZED}</td>
+                </tr>
+                <tr>
+                  <td>Number Of Commands Executed</td>
+                  <td>{NUMBER_OF_COMMANDS_EXECUTED}</td>
+                </tr>
+                <tr>
+                  <td>Number Of Commands Missed</td>
+                  <td>{NUMBER_OF_COMMANDS_MISSED}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-file-code-o" aria-hidden="true"></i> Unit Tests</h3>
+              </div>
+              <div class="panel-body">
+                <canvas id="UnitTests" width="200" height="150"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-tasks" aria-hidden="true"></i> Code Coverage</h3>
+              </div>
+              <div class="panel-body">
+                <canvas id="CodeCoverage" width="200" height="150"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-eye" aria-hidden="true"></i> Code Analysis</h3>
+              </div>
+              <div class="panel-body">
+                <canvas id="CodeAnalysis" width="200" height="150"></canvas>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="row placeholders">
+
+          <div class="col-xs-6 col-sm-8">
+            <h2 class="sub-header" id="tests">
+              <i class="fa fa-file-code-o" aria-hidden="true"></i> Pester Tests 
+              <span class="badge">{PASSED_COUNT} passed</span><span class="badge">{FAILED_COUNT} failed</span> 
+            </h2>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Status</th>
+                  <th>Test</th>
+                  <th>Describe</th>
+                  <th>Context</th>
+                  <th>Error Message</th>
+                  <th>Duration</th>
+                </tr>
+              </thead>
+              <tbody>
+                {TEST_TABLE}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="col-xs-6 col-sm-4">
+            <h2 class="sub-header"><i class="fa fa-file-text-o" aria-hidden="true"></i> Files Tested <span class="badge">{NUMBER_OF_FILES_ANALYZED}</span></h2>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="col-xs-12">File &amp; Test Coverage</th>
+                  <!--<th class="col-xs-6">Coverage</th>-->
+                </tr>
+              </thead>
+              <tbody>
+                {FILES_TESTED_TABLE}
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+        <div class="row placeholders">
+
+          <div class="col-xs-6 col-sm-12">
+            <h2 class="sub-header" id="analysis"><i class="fa fa-eye" aria-hidden="true"></i> Script Analysis
+              <span class="badge">{SA_ERROR_COUNT} error(s)</span>
+              <span class="badge">{SA_WARNING_COUNT} warning(s)</span>
+            </h2>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Severity</th>
+                  <th>RuleName</th>
+                  <th>ScriptName</th>
+                  <th>Line</th>
+                  <th>Column</th>
+                  <th>Message</th>
+                </tr>
+              </thead>
+              <tbody>
+                {SCRIPT_ANALYSIS_TABLE}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="row placeholders">
+
+          <div class="col-xs-6 col-sm-12">
+            <h2 class="sub-header" id="coverage">
+              <i class="fa fa-tasks" aria-hidden="true"></i> Coverage
+              <span class="badge">{NUMBER_OF_COMMANDS_EXECUTED} / {NUMBER_OF_COMMANDS_ANALYZED} line(s)</span>
+              <span class="badge">{NUMBER_OF_FILES_ANALYZED} / {NUMBER_OF_PS1_FILES} file(s)</span>
+            </h2>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Covered</th>
+                  <th>File</th>
+                  <th>Line</th>
+                  <th>Function</th>
+                  <th>Command</th>
+                </tr>
+              </thead>
+              <tbody>
+                {COVERAGE_TABLE}
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!--<script src="https://use.fontawesome.com/504bc20042.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                 
+    <script src="./lib/TestReport.js"></script>
+
+    <script>
+
+    // Unit Test Chart
+    var ctx = $("#UnitTests");
+    var data = {
+      labels: [
+        "Pass",
+        "Fail",
+      ],
+      datasets: [
+        {
+          data: [{PASSED_COUNT}, {FAILED_COUNT}],
+          backgroundColor: [
+            "#5cb85c",
+            "#FF6384",
+          ],
+          hoverBackgroundColor: [
+            "#5cb85c",
+            "#FF6384",
+          ]
+        }]
+      };
+      var UnitTests = new Chart(ctx, {
+        type: 'doughnut',
+        data: data,
+        options: {
+          legend: {
+            position: "top"
+          },
+          elements: {
+            center: {
+              // the longest text that could appear in the center
+              maxText: '100%',
+              text: '{TEST_OVERALL}%',
+              fontColor: '{TEST_OVERALL_COLOR}',
+              fontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+              fontStyle: 'normal',
+              minFontSize: 12,
+              maxFontSize: 256,
+            }
+          }
+        }
+      });
+
+      // Code Coverage Chart
+      var ctx2 = $("#CodeCoverage");
+      var data2 = {
+        labels: [
+          "Hit",
+          "Miss",
+        ],
+        datasets: [
+          {
+            data: [{NUMBER_OF_COMMANDS_EXECUTED}, {NUMBER_OF_COMMANDS_MISSED}],
+            backgroundColor: [
+              "#5cb85c",
+              "#FFCE56"
+            ],
+            hoverBackgroundColor: [
+              "#5cb85c",
+              "#FFCE56"
+            ]
+          }]
+      };
+      var CodeCoverage = new Chart(ctx2, {
+        type: 'doughnut',
+        data: data2,
+        options: {
+          legend: {
+            position: "top"
+          },
+          elements: {
+            center: {
+              // the longest text that could appear in the center
+              maxText: '100%',
+              text: '{COVERAGE_OVERALL}%',
+              fontColor: '{COVERAGE_OVERALL_COLOR}',
+              fontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+              fontStyle: 'normal',
+              // fontSize: 12,
+              // if a fontSize is NOT specified, we will scale (within the below limits) maxText to take up the maximum space in the center
+              // if these are not specified either, we default to 1 and 256
+              minFontSize: 1,
+              maxFontSize: 256,
+            }
+          }
+        }
+      });
+
+      // Code Analysis Chart
+      var ctx3 = $("#CodeAnalysis");
+      var data3 = {
+        labels: [
+          "Error(s): {SA_ERROR_COUNT}",
+          "Warning(s): {SA_WARNING_COUNT}"
+        ],
+        datasets: [
+          {
+            data: [{SA_ERROR_COUNT},{SA_WARNING_COUNT}],
+            backgroundColor: [
+              "#FF6384",
+              "#FFCE56"
+            ],
+            hoverBackgroundColor: [
+              "#FF6384",
+              "#FFCE56"
+            ]
+          }]
+      };
+      var CodeAnalysis = new Chart(ctx3, {
+        type: 'bar',
+        data: data3,
+          options: {
+                  scales: {
+                      yAxes: [{
+                          ticks: {
+                              beginAtZero:true,
+                              stepSize: 1
+                          }
+                      }]
+                  },
+                  legend: {
+                    display: false
+                  }
+              }
+      });
+    </script>
+
+</body>
+</html>
