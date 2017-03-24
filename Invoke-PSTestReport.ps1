@@ -7,7 +7,8 @@ Param(
   [double]  $Compliance = 0.8,
   [string]  $ScriptAnalyzerFile = ".\artifacts\ScriptAnalyzerResults.json",
   [string]  $PesterFile = ".\artifacts\PesterResults.json",
-  [string]  $OutputDir = ".\artifacts"
+  [string]  $OutputDir = ".\artifacts",
+  [switch]  $FailOnSkippedOrPending
 )
 
 # HTML Colors
@@ -73,6 +74,14 @@ foreach($test in $Pester.TestResult)
     if($test.Result -eq "Passed")
     {
         $status = "<span class='label label-success'>Passed</span>"
+    }
+    elseif($test.Result -eq "Skipped")
+    {
+        $status = "<span class='label label-warning'>Skipped</span>"
+    }
+    elseif($test.Result -eq "Pending")
+    {
+        $status = "<span class='label label-info'>Pending</span>"
     }
     else
     {
@@ -204,6 +213,25 @@ foreach($file in $FileCoverage.GetEnumerator())
 
 $OverallCoverage = ($Pester.CodeCoverage.NumberOfCommandsExecuted/$Pester.CodeCoverage.NumberOfCommandsAnalyzed)
 
+
+# Determine Pester overall status
+if($Pester.FailedCount -eq 0)
+{
+    # If the switch $FailOnSkippedOrPending is set, any skipped or pending tests will fail the build.
+    if ($FailOnSkippedOrPending -and ($Pester.PendingCount -ne 0) -and ($Pester.SkippedCount -ne 0) ) 
+    {
+        $PesterPassed = $false
+    }
+    else
+    {
+        $PesterPassed = $true
+    }
+}
+else
+{
+    $PesterPassed = $false
+}
+
 # Replace Everything in html template and output report
 $Replace = @{
     # Custom
@@ -216,9 +244,9 @@ $Replace = @{
     COMMIT_HASH = Get-GitCommitHash -Length 10
 
     # Generated 
-    BUILD_RESULT = if($OverallCoverage -ge $Compliance -and $Pester.FailedCount -eq 0) {"PASSED"} else {"FAILED"}
-    BUILD_RESULT_COLOR = if($OverallCoverage -ge $Compliance -and $Pester.FailedCount -eq 0) {"panel-success"} else {"panel-danger"}
-    BUILD_RESULT_ICON = if($OverallCoverage -ge $Compliance -and $Pester.FailedCount -eq 0) {"fa-check"} else {"fa-times"}
+    BUILD_RESULT = if($OverallCoverage -ge $Compliance -and $PesterPassed) {"PASSED"} else {"FAILED"}
+    BUILD_RESULT_COLOR = if($OverallCoverage -ge $Compliance -and$PesterPassed) {"panel-success"} else {"panel-danger"}
+    BUILD_RESULT_ICON = if($OverallCoverage -ge $Compliance -and $PesterPassed) {"fa-check"} else {"fa-times"}
 
     TEST_TABLE = $TestResultsTable
     FILES_TESTED_TABLE = $FilesTestedTable
