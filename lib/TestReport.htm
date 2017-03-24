@@ -215,7 +215,10 @@
           <div class="col-xs-6 col-sm-8">
             <h2 class="sub-header" id="tests">
               <i class="fa fa-file-code-o" aria-hidden="true"></i> Pester Tests 
-              <span class="badge">{PASSED_COUNT} passed</span><span class="badge">{FAILED_COUNT} failed</span> 
+              <span class="badge">{PASSED_COUNT} passed</span>
+              <span class="badge">{FAILED_COUNT} failed</span>
+              <span class="badge">{SKIPPED_COUNT} skipped</span>
+              <span class="badge">{PENDING_COUNT} pending</span>
             </h2>
             <table class="table table-striped">
               <thead>
@@ -320,17 +323,23 @@
       labels: [
         "Pass",
         "Fail",
+        "Skipped",
+        "Pending"
       ],
       datasets: [
         {
-          data: [{PASSED_COUNT}, {FAILED_COUNT}],
+          data: [{PASSED_COUNT}, {FAILED_COUNT},{SKIPPED_COUNT},{PENDING_COUNT}],
           backgroundColor: [
             "#5cb85c",
             "#FF6384",
+            "#f0ad4e",
+            "#5bc0de",
           ],
           hoverBackgroundColor: [
             "#5cb85c",
             "#FF6384",
+            "#f0ad4e",
+            "#5bc0de",
           ]
         }]
       };
